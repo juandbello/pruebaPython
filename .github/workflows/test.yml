@@ -29,7 +29,7 @@ jobs:
         run: pip install -e .
 
       - name: paso5 - Ejecutar ingesta
-        run: sudo python src/ibgd/ingesta.py
+        run: python src/ibgd/ingesta.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -38,3 +38,6 @@ jobs:
           commit_user_name: Natalia Rojas [GitHub Actions]
           commit_user_email: natalia.rojas@est.iudigital.edu.co
           commit_author: Natalia Rojas <natalia.rojas@est.iudigital.edu.co>
+      - name: Listar archivos generados
+        run: ls -R src/ibgd/static
+
