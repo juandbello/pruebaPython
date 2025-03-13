@@ -40,4 +40,10 @@ jobs:
           commit_author: Natalia Rojas <natalia.rojas@est.iudigital.edu.co>
       - name: Listar archivos generados
         run: ls -R src/ibgd/static
+      - name: Guardar archivos generados
+        uses: actions/upload-artifact@v3
+        with:
+          name: archivos-generados
+          path: src/ibgd/static/
+
 
