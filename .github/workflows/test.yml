@@ -30,20 +30,21 @@ jobs:
 
       - name: paso5 - Ejecutar ingesta
         run: python src/ibgd/ingesta.py
-
-      - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: generación informe prueba json
-          commit_user_name: Natalia Rojas [GitHub Actions]
-          commit_user_email: natalia.rojas@est.iudigital.edu.co
-          commit_author: Natalia Rojas <natalia.rojas@est.iudigital.edu.co>
-      - name: Listar archivos generados
-        run: ls -R src/ibgd/static
       - name: Guardar archivos generados
         uses: actions/upload-artifact@v4
         with:
           name: archivos-generados
           path: src/ibgd/static/
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: generación informe prueba json
+          file_pattern: "src/ibgd/static/**/*"
+          commit_user_name: Natalia Rojas [GitHub Actions]
+          commit_user_email: natalia.rojas@est.iudigital.edu.co
+          commit_author: Natalia Rojas <natalia.rojas@est.iudigital.edu.co>
+      - name: Listar archivos generados
+        run: ls -R src/ibgd/static
+      
 
 
