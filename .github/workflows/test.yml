@@ -41,7 +41,7 @@ jobs:
       - name: Listar archivos generados
         run: ls -R src/ibgd/static
       - name: Guardar archivos generados
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: archivos-generados
           path: src/ibgd/static/
